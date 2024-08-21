@@ -16,5 +16,9 @@ namespace AulasPOO.uteis
         {
             return num1 * num2;
         }
+        public static double IMC(double peso, double alt)
+        {
+            return peso / Math.Pow(alt, 2);
+        }
     }
 }
