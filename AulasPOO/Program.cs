@@ -1,5 +1,9 @@
 ﻿using AulasPOO.uteis;
+using System.Collections.Generic;
+using System.Formats.Tar;
+
 int opcao = 0, num1, num2;
+
 do
 {
     Console.WriteLine("Escolha uma opção: ");
@@ -34,3 +38,33 @@ void LerDoisNumerosinteiros()
     num2 = int.Parse(Console.ReadLine()); ;
 
 }
+
+/*Na Pasta úteis crie uma classe chamada Sorteador que será capaz de sortear os nomes existentes em um vetor de nomes. 
+ * A cada nome sorteado ele será armazenado em uma lista de nomes sorteados.
+ * Ao final imprimir a Lista Original e a Lista com os nomes Sorteados
+ */
+
+var Sorter = new Sorteador();
+
+List<string> Names = new List<string>();
+bool ind = true;
+do
+{
+    Console.Write("Adicione um nome: ");
+    Names.Add(Console.ReadLine());
+    Console.Write("Deseja continuar?: ");
+    var opt = Console.ReadLine();
+    if (opt == "não")
+    {
+        ind = false;
+    }
+    else
+    {
+        ind = true;
+    }
+
+} while(ind == true);
+
+var Sorteados = Sorter.Sorter(Names);
+string final = string.Join(", ", Sorteados);
+Console.WriteLine(final);
